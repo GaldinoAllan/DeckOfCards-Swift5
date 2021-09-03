@@ -38,3 +38,15 @@ extension Int {
         }
     }
 }
+
+extension Float {
+    var arc4random: Float {
+        if self > 0 {
+            return Float(Int(arc4random_uniform(UInt32(self))))
+        } else if self < 0 {
+            return Float(Int(arc4random_uniform(UInt32(abs(self)))))
+        } else {
+            return 0
+        }
+    }
+}
